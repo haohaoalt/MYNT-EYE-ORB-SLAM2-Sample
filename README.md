@@ -1,66 +1,11 @@
-# MYNT-ORBSLAM2
-[MYNT-EYE-S-SDK]: https://github.com/slightech/MYNT-EYE-S-SDK.git
+# Hao-MYNT-ORBSLAM2
 [MYNT-EYE-D-SDK]: https://github.com/slightech/MYNT-EYE-D-SDK.git
-
-At first ,judge if your device type is mynteye-d or mynteye-s,then follow the following installation process: [Install with MYNT-EYE-S-SDK](#ssdkinstall) / [Install with MYNT-EYE-D-SDK](#dsdkinstall).
-
-## Install with <span id = "ssdkinstall">MYNT-EYE-S-SDK</span>
-### If you wanna run ORB_SLAM2 with mynteye-s camera, please follow the steps:
-1. Download [MYNT-EYE-S-SDK][] and follow steps to install.
-2. Follow the normal procedure to install ORB_SLAM2.
-3. run examples by mynteye camera.
-
-### Prerequisites
-```commandline
-sudo apt-get -y install libglew-dev cmake 
-cd ~
-git clone https://github.com/stevenlovegrove/Pangolin.git
-cd Pangolin
-mkdir build
-cd build
-cmake ..
-cmake --build .
-sudo make install
-```
-
-
-### Building the nodes for stereo (ROS)
-
-* Add the path including Examples/ROS/ORB_SLAM2 to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned ORB_SLAM2:
-    ```
-    export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:~/catkin_ws/src/MYNT-EYE-ORB-SLAM2-Sample
-    ```
-* Execute build_ros.sh script:
-    ```
-    chmod +x build.sh
-  ./build.sh
-    chmod +x build_ros.sh
-  ./build_ros.sh
-    ```
-
-* Launch ORB_SLAM2 Stereo_ROS
-   
-   Run camera mynt_eye_ros_wrapper
-    ```
-    cd [path of mynteye-s-sdk]
-    make ros
-    source ./wrappers/ros/devel/setup.bash
-    roslaunch mynt_eye_ros_wrapper mynteye.launch
-    ```
-   Run ORB_SLAM2, open another terminal and follow the steps.   
-   
-   When s device
-    ```
-    rosrun ORB_SLAM2 mynteye_s_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_s_stereo.yaml false /mynteye/left_rect/image_rect /mynteye/right_rect/image_rect
-    ```
-  When avarta device
-    ```
-    rosrun ORB_SLAM2 mynteye_s_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_s_stereo.yaml false /mynteye/left_rect_mono /mynteye/right_rect_mono
-    ```
 
 ## Install with  <span id = "dsdkinstall">MYNT-EYE-D-SDK</span>
 ### If you wanna run ORB_SLAM2 with mynteye-d camera, please follow the steps:
-1. Download [MYNT-EYE-D-SDK][] and follow steps to install.
+1. Download [MYNT-EYE-D-SDK][] and follow steps to install. 
+   
+   `https://github.com/haohaoalt/MYNT-EYE-D-SDK.git`
 2. Follow the normal procedure to install ORB_SLAM2.
 3. run examples by mynteye camera.
 
